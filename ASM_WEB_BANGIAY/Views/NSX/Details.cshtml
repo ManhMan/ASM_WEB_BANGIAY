@@ -1,0 +1,24 @@
+﻿@model ASM_WEB_BANGIAY.Models.NSX
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>NSX</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TenNSX)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TenNSX)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-ma="@Model.Ma">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
