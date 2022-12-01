@@ -10,6 +10,10 @@ namespace ASM_WEB_BANGIAY.Repositories
     public class VoucherRepo : IVoucherRepo
     {
         private ShopDatabaseContext _context;
+        public VoucherRepo()
+        {
+            _context = new ShopDatabaseContext();
+        }
         public VoucherRepo(ShopDatabaseContext context)
         {
            _context = context;

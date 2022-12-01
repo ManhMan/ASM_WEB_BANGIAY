@@ -10,6 +10,10 @@ namespace ASM_WEB_BANGIAY.Repositories
     public class HoaDonRepo : IHoaDonRepo
     {
         private ShopDatabaseContext _context;
+        public HoaDonRepo()
+        {
+            _context = new ShopDatabaseContext();
+        }
         public HoaDonRepo(ShopDatabaseContext context)
         {
             _context = context;

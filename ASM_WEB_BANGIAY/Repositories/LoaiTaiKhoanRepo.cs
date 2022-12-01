@@ -10,6 +10,10 @@ namespace ASM_WEB_BANGIAY.Repositories
     public class LoaiTaiKhoanRepo : ILoaiTaiKhoanRepo
     {
         private ShopDatabaseContext _context;
+        public LoaiTaiKhoanRepo()
+        {
+            _context = new ShopDatabaseContext();
+        }
         public LoaiTaiKhoanRepo(ShopDatabaseContext context)
         {
             _context = context;

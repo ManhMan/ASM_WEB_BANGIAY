@@ -10,6 +10,10 @@ namespace ASM_WEB_BANGIAY.Repositories
     public class NguoiDungRepo : INguoiDungReop
     {
         private ShopDatabaseContext _context;
+        public NguoiDungRepo()
+        {
+            _context = new ShopDatabaseContext();
+        }
         public NguoiDungRepo(ShopDatabaseContext context)
         {
             _context = context;

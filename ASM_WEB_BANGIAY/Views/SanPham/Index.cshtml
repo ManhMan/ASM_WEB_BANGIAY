@@ -2,6 +2,10 @@
 
 @{
     ViewData["Title"] = "Index";
+    var thongbao = ViewData["thongbao"] as string;
+    var result = ViewData["result"] as string;
+    var lstNSX = ViewData["lstNSX"] as List<NSX>;
+    string tenNSX = "";
 }
 
 <h1>Index</h1>
@@ -9,69 +13,91 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenSP)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GiaNhap)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GiaBan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayNhap)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SoLuong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HinhAnh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrangThai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaNSX)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenSP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GiaNhap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GiaBan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayNhap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoLuong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HinhAnh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrangThai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaNSX)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Ma">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Ma">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Ma">Delete</a>
-            </td>
-        </tr>
+<form method="get" asp-controller="SanPham" asp-action="SearchSanPham">
+    <input name="a" type="text" placeholder="Nhập khoảng 1" />
+    <input name="b" type="text" placeholder="Nhập khoảng 2" />
+    <button type="submit">Tìm kiếm</button>
+</form>
+
+@if (thongbao != null)
+{
+    <h3>@thongbao</h3>
 }
-    </tbody>
-</table>
+@if (result != null)
+{
+    <h3>@result</h3>
+}
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenSP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaNhap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaBan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayNhap)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuong)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HinhAnh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TrangThai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaNSX)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaNhap)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaBan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayNhap)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLuong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinhAnh)
+                    </td>
+                    <td>
+                       @*@Html.DisplayFor(modelItem => item.TrangThai)*@
+                        @(item.TrangThai ? "Còn hàng" : "Hết hàng")
+                    </td>
+                    <td>
+                        @(tenNSX = lstNSX.FirstOrDefault(p=>p.Ma == item.MaNSX).TenNSX)
+                        
+
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-ma="@item.Ma">Edit</a> |
+                        <a asp-action="Details" asp-route-ma="@item.Ma">Details</a> |
+                        <a asp-action="Delete" asp-route-ma="@item.Ma">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

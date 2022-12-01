@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    var thongbao = ViewData["thongbao"] as string;
 }
 
 <h1>Index</h1>
@@ -9,27 +10,53 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenNSX)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenNSX)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-ma="@item.Ma">Edit</a> |
-                <a asp-action="Details" asp-route-ma="@item.Ma">Details</a> |
-                <a asp-action="Delete" asp-route-ma="@item.Ma">Delete</a>
-            </td>
-        </tr>
+<form method="get" asp-controller="NSX" asp-action="SearchByName">
+    <input name="keyword" type="text" placeholder="Tìm kiếm" />
+    <button type="submit">Tìm kiếm</button>
+</form>
+@if (thongbao != null)
+{
+    <h3>@thongbao</h3>
 }
-    </tbody>
-</table>
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenNSX)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenNSX)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-ma="@item.Ma">Edit</a> |
+                        <a asp-action="Details" asp-route-ma="@item.Ma">Details</a> |
+                        <a asp-action="Delete" asp-route-ma="@item.Ma">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>@thongbao</h3>
+}
+
+
+
+<select>
+    @foreach (var item in Model)
+    {
+        <option>@item.Ma</option>
+    }
+    
+</select>

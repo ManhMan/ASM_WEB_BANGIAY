@@ -3,6 +3,7 @@ using ASM_WEB_BANGIAY.Models;
 using ASM_WEB_BANGIAY.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace ASM_WEB_BANGIAY.Controllers
 {
@@ -68,6 +69,25 @@ namespace ASM_WEB_BANGIAY.Controllers
                 return RedirectToAction("Index");
             }
             return BadRequest();
+        }
+        [HttpGet]
+        public IActionResult SearchByName(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                var result = _sxRepo.GetAllNSX().Where(p=>p.TenNSX.Contains(keyword)).ToList();
+                if (result.Count > 0)
+                {
+                    return View("Index", result);
+                }
+                else
+                {
+                    ViewData["thongbao"] = "không thấy";
+
+                }
+            }
+            return RedirectToAction("Index");
+           // return View("Index");
         }
     }
 }

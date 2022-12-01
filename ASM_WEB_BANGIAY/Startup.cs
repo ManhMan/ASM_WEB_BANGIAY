@@ -25,18 +25,22 @@ namespace ASM_WEB_BANGIAY
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //add thêm secction
+            services.AddSession(p => {
+                p.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
             services.AddControllersWithViews();
             services.AddMvc();
             //Khai báo DI
             services.AddScoped<ISanPhamRepo, SanPhamRepo>();
             services.AddScoped<INSXRepo, NSXRepo>();
-            //services.AddScoped<IVoucherRepo, VoucherRepo>();
-            //services.AddScoped<INguoiDungReop, NguoiDungRepo>();
-            //services.AddScoped<ILoaiTaiKhoanRepo, LoaiTaiKhoanRepo>();
-            //services.AddScoped<IHoaDonCHiTietRepo, HoaDonChiTietRepo>();
-            //services.AddScoped<IHoaDonRepo, HoaDonRepo>();
-            //services.AddScoped<IGioHangChiTietRepo, GioHangChiTietRepo>();
-            //services.AddScoped<IGioHangRepo, GioHangRepo>();
+            services.AddScoped<IVoucherRepo, VoucherRepo>();
+            services.AddScoped<INguoiDungReop, NguoiDungRepo>();
+            services.AddScoped<ILoaiTaiKhoanRepo, LoaiTaiKhoanRepo>();
+            services.AddScoped<IHoaDonCHiTietRepo, HoaDonChiTietRepo>();
+            services.AddScoped<IHoaDonRepo, HoaDonRepo>();
+            services.AddScoped<IGioHangChiTietRepo, GioHangChiTietRepo>();
+            services.AddScoped<IGioHangRepo, GioHangRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +60,8 @@ namespace ASM_WEB_BANGIAY
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession(); // Thêm ?? dùng Session
+            //add thêm secstion, cài section 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

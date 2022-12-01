@@ -2,6 +2,7 @@
 using ASM_WEB_BANGIAY.IRepositories;
 using ASM_WEB_BANGIAY.Models;
 using ASM_WEB_BANGIAY.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -26,6 +27,7 @@ namespace ASM_WEB_BANGIAY.Controllers
 
         public IActionResult Index()
         {
+            ViewData["thongbao"] = HttpContext.Session.GetString("user");
             return View();
         }
 
@@ -40,7 +42,21 @@ namespace ASM_WEB_BANGIAY.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         
-
+        public IActionResult Login(string user, string pass) 
+        {
+            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
+            {
+                ViewData["loginfalse"] = "Đăng nhập thất bại";
+                return View();
+                //return RedirectToAction("Index");
+            }
+            else
+            {
+                HttpContext.Session.SetString("user", user);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
        
     }
 }

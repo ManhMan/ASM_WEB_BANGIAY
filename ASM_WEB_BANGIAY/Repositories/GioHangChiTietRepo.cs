@@ -10,6 +10,10 @@ namespace ASM_WEB_BANGIAY.Repositories
     public class GioHangChiTietRepo : IGioHangChiTietRepo
     {
         private ShopDatabaseContext _context;
+        public GioHangChiTietRepo()
+        {
+            _context = new ShopDatabaseContext();
+        }
         public GioHangChiTietRepo(ShopDatabaseContext context)
         {
             _context = context;
