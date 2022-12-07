@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
+using System.Web;
+using System.IO;
 
 namespace ASM_WEB_BANGIAY.Controllers
 {
@@ -36,16 +38,11 @@ namespace ASM_WEB_BANGIAY.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            //List<int> manhasx = new List<int>();
-            //foreach (var item in _sxRepo.GetAllNSX())
-            //{
-            //    manhasx.Add(item.Ma);
-            //}
-            //ViewData["mansx"] = manhasx;
             List<NSX> lstNSX = _sxRepo.GetAllNSX().ToList(); //1 thằng này là đủ lấy đc cả mã + tên
             ViewData["lstNSX"] = lstNSX;
             return View();
         }
+        
         [HttpPost]
         public IActionResult Create(SanPham sp)
         {           
@@ -86,6 +83,8 @@ namespace ASM_WEB_BANGIAY.Controllers
         public IActionResult Details(int ma)
         //ăn theo router-id, chuyển chữ id thành ma là ăn theo cái truyền vào 
         {
+            List<NSX> lstNSX = _sxRepo.GetAllNSX().ToList(); //1 thằng này là đủ lấy đc cả mã + tên
+            ViewData["lstNSX"] = lstNSX;
             var result = _spRepo.GetByIdSanPham(ma);
             return View(result);
         }

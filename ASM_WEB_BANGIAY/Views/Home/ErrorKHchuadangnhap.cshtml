@@ -1,0 +1,23 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Bạn chưa đăng nhập</h1>
+<h2 class="text-danger">Vui lòng đăng nhập để xem giỏ hàng của bạn.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <h2>
+        <strong>Mã lỗi:</strong> <code>@Model.RequestId</code>
+    </h2>
+    <h2>
+        <strong>Tên lỗi:</strong> <code>@Model.Errorname</code>
+    </h2>
+}
+
+<h3>Bùi Thế Mạnh</h3>
+<p>
+    Admmin <strong>Bùi Thế Mạnh</strong> đã phát hiện ra lỗi này và đưa đến bạn !.
+</p>
+<a asp-controller="Home" asp-action="Index">Quay lại trang chủ</a>

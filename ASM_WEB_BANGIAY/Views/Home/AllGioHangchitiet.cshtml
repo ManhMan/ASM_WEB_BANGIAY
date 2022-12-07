@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ASM_WEB_BANGIAY.Models.GioHangChiTiet>
+
+@{
+    ViewData["Title"] = "AllGioHangchitiet";
+    var maGH = ViewBag.maGH;
+    var lstSP = ViewData["lstSP"] as List<SanPham>;
+    string tensp = "";
+    decimal thanhtien = 0;
+    var thongbao = ViewBag.thongbao;
+    var tt = ViewBag.tt;
+}   
+
+<h1>Giỏ hàng của bạn</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã giỏ hàng
+            </th>
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+               Số lượng
+            </th>
+            <th>
+                Giá bán
+            </th>
+            <th>
+                Thành tiền
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    if (item.MaGioHang == maGH)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaGioHang)
+                    </td>
+                    <td>                       
+                        @(tensp = lstSP.FirstOrDefault(p=>p.Ma == item.MaSP).TenSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLuong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaBan)
+                    </td>
+                    <td >
+                        @(thanhtien = item.GiaBan*item.SoLuong)
+                    </td>
+                    
+                    <td>
+                        @Html.ActionLink("Giảm", "GiamSL", new { masp=item.MaSP, magh=item.MaGioHang }) |
+                        @Html.ActionLink("Tăng", "TangSl", new { masp=item.MaSP, magh=item.MaGioHang }) |
+                        @Html.ActionLink("Xóa sản phẩm", "Delete", new { masp=item.MaSP, magh=item.MaGioHang })|
+                         <a asp-controller="SanPham" asp-action="Details" asp-route-ma="@item.MaSP">Chi tiết sản phẩm</a> |
+                    </td>
+                </tr>
+                
+            }      
+}
+        <h1>Tổng giá thị :
+            @tt VND
+        </h1>
+    </tbody>
+</table>

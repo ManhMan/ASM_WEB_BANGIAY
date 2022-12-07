@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,6 +7,7 @@
     <title>@ViewData["Title"] - ASM_WEB_BANGIAY</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    
 </head>
 <body>
     <header>
@@ -16,28 +18,27 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SanPham" asp-action="Index">Sản phẩm</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="NguoiDung" asp-action="CreateKH">Đăng ký</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="NSX" asp-action="Index">NSX</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AllGioHang">Giỏ hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Đăng nhập</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AllGioHangchitiet">Giỏ hàng chi tiết</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="LoaiTaiKhoan" asp-action="Index">Loại TK</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="NguoiDung" asp-action="Index">Tài khoản</a>
-                        </li>
+                        
                     </ul>
                 </div>
+                <button class="btn btn-success" style="height:40px">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout" style="margin-top : -7px">Đăng xuất</a>
+                </button>
             </div>
         </nav>
     </header>
@@ -48,8 +49,8 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - ASM_WEB_BANGIAY - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container" style="text-align : center">
+            Bùi Thế Mạnh Manhbtph18897- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -58,3 +59,6 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
+
+

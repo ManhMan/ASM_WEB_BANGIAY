@@ -1,12 +1,14 @@
-﻿@{
+﻿@model IEnumerable<ASM_WEB_BANGIAY.Models.SanPham>
+@{
     ViewData["Title"] = "Home Page";
     var thongbao = ViewData["thongbao"] as string;
     var loginfalse = ViewData["loginfalse"] as string;
+    var lstNSX = ViewData["lstNSX"] as List<NSX>;
+    string tenNSX = "";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Chào mừng đến với bình nguyên vô tận C# 4</h1>
     @if (thongbao != null)
     {
         <h2>xin chào : @thongbao</h2>
@@ -14,5 +16,35 @@
     @if (loginfalse != null)
     {
         <h2>xin chào : @loginfalse</h2>
+    }
+
+    @if (Model != null)
+    {       
+            <ul class="row" style="list-style: none">
+            @foreach (var item in Model)
+             {
+            <li class="col-3">               
+                    <div class="card" style="width: 16rem; margin-bottom: 20px">
+                        @*<img src="..." class="card-img-top" alt="...">*@
+                        <p>@Html.DisplayFor(modelItem => item.HinhAnh)</p>
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.TenSP)</h5>
+                            <div class="card-price">
+                                <p class="">
+                                    Giá gốc: <del>@Html.DisplayFor(modelItem => item.GiaNhap) $</del>
+                                </p>
+                                <p class="">
+                                    <b>Sale: @Html.DisplayFor(modelItem => item.GiaBan) $</b>
+                                </p>
+                                <p class="">
+                                    <b>Trạng thái:@(item.TrangThai ? "Còn hàng" : "Hết hàng")</b>
+                                </p>
+                            </div>
+                            <a asp-controller="Home" asp-action="Addtocard" asp-route-ma="@item.Ma" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>                   
+                </li>
+             }
+            </ul>  
     }
 </div>

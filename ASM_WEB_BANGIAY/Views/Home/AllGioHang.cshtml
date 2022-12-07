@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ASM_WEB_BANGIAY.Models.GioHang>
+
+@{
+    ViewData["Title"] = "AllGioHang";
+    
+    var maND = ViewBag.maND;
+    var tt = ViewBag.tt;
+}
+
+<h1>AllGioHang</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã giỏ hàng
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaVoucher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayTao)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.TrangThai)*@
+                Trạng thái
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TongTien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NguoiDung)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            if (item.MaNguoiDung == @maND)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ma)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaVoucher)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayTao)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.TrangThai)*@
+                        @(item.TrangThai?"Đã thanh toán":"Chưa thanh toán")
+                    </td>
+                    <td>
+                        @tt
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NguoiDung.DiaChi)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Ma">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Ma">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Ma">Delete</a>
+                    </td>
+                </tr>
+               }
+            
+}
+    </tbody>
+</table>

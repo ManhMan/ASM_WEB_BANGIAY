@@ -1,8 +1,10 @@
 ﻿using ASM_WEB_BANGIAY.Context;
 using ASM_WEB_BANGIAY.IRepositories;
 using ASM_WEB_BANGIAY.Models;
+using Microsoft.AspNetCore.Hosting.Server;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace ASM_WEB_BANGIAY.Repositories
@@ -22,7 +24,12 @@ namespace ASM_WEB_BANGIAY.Repositories
         {
             try
             {
+                //string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+                //File.Copy(sanpham.HinhAnh, Path.Combine(projectDirectory, "IMG", Path.GetFileName(sanpham.HinhAnh)), true);
+                //sanpham.HinhAnh = Path.Combine(projectDirectory, "IMG", Path.GetFileName(sanpham.HinhAnh));
+                
                 _context.SanPhams.Add(sanpham);
+                
                 _context.SaveChanges();
                 return true;
             }

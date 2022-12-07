@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Details";
+    var lstNSX = ViewData["lstNSX"] as List<NSX>;
+    string tenNSX = "";
 }
 
 <h1>Details</h1>
@@ -41,26 +43,31 @@
             @Html.DisplayFor(model => model.SoLuong)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HinhAnh)
+            Hình ảnh
+            
         </dt>
         <dd class = "col-sm-10">
+            <img src="@Html.DisplayNameFor(model => model.HinhAnh)" />
             @Html.DisplayFor(model => model.HinhAnh)
+            
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.TrangThai)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TrangThai)
+            @*@Html.DisplayFor(model => model.TrangThai)*@
+            @(Model.TrangThai ? "Còn hàng" : "Hết hàng")
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.NSX)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NSX.Ma)
+            @(tenNSX = lstNSX.FirstOrDefault(p => p.Ma == Model.MaNSX).TenNSX)
         </dd>
     </dl>
 </div>
 <div>
+    
     <a asp-action="Edit" asp-route-ma="@Model.Ma">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="Home" asp-action="Index">Back to List</a>
 </div>

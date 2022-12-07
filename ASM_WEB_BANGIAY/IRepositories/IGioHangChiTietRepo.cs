@@ -6,7 +6,7 @@ namespace ASM_WEB_BANGIAY.IRepositories
     public interface IGioHangChiTietRepo
     {
         IEnumerable<GioHangChiTiet> GetAllGioHangChiTiet();
-        GioHangChiTiet GetByIdGioHangChiTiet(int ma);
+        GioHangChiTiet GetGHCTbyMa(int masp, int magh);
         bool AddGioHangChiTiet(GioHangChiTiet giohangchitiet);
         bool UpdateGioHangChiTiet(GioHangChiTiet giohangchitiet);
         bool DeleteGioHangChiTiet(GioHangChiTiet giohangchitiet);

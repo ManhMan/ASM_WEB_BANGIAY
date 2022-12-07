@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Index";
+    string tenLTK = "";
+    var lstLTK = ViewData["lstLTK"] as List<LoaiTaiKhoan>;
 }
 
 <h1>Index</h1>
@@ -58,7 +60,8 @@
                 @Html.DisplayFor(modelItem => item.MatKhau)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LoaiTaiKhoan.TenLoaiTK)
+                @(tenLTK = lstLTK.FirstOrDefault(p=>p.Ma==item.MaLoaiTaiKhoan).TenLoaiTK)
+                
             </td>
             <td>
                 <a asp-action="Edit" asp-route-ma="@item.Ma">Edit</a> |

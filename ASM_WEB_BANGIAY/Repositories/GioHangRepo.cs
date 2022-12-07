@@ -51,9 +51,9 @@ namespace ASM_WEB_BANGIAY.Repositories
             return _context.GioHangs.ToList();
         }
 
-        public GioHang GetByIdGioHang(int ma)
+        public GioHang GetGioHangByMaNgDung(int ma)
         {
-            return _context.GioHangs.FirstOrDefault(p => p.Ma == ma);
+            return _context.GioHangs.FirstOrDefault(p => p.MaNguoiDung == ma);
         }
 
         public bool UpdateGioHang(GioHang giohang)

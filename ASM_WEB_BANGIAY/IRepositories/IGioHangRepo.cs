@@ -6,7 +6,7 @@ namespace ASM_WEB_BANGIAY.IRepositories
     public interface IGioHangRepo
     {
         IEnumerable<GioHang> GetAllGioHang();
-        GioHang GetByIdGioHang(int ma);
+        GioHang GetGioHangByMaNgDung(int ma);
         bool AddGioHang(GioHang giohang);
         bool UpdateGioHang(GioHang giohang);
         bool DeleteGioHang(GioHang giohang);

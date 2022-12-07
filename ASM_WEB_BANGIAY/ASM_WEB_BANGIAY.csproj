@@ -5,6 +5,61 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\IMG_SP\bang-size-giay-nam.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\BANNER-CONVERSE.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\banner-cuahang.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\banner-gioithieu.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\banner-sanpham.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\banner-slide-1.png" />
+    <Content Remove="wwwroot\css\IMG_SP\bannerCSKH.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\bannergt-gt.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\bannergt.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\bannner.png" />
+    <Content Remove="wwwroot\css\IMG_SP\Decorative-Line-Gold-PNG-Clipart.png" />
+    <Content Remove="wwwroot\css\IMG_SP\demoASM1.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\demoASM2.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\duongpen.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\email.png" />
+    <Content Remove="wwwroot\css\IMG_SP\facebook (1).png" />
+    <Content Remove="wwwroot\css\IMG_SP\facebook.png" />
+    <Content Remove="wwwroot\css\IMG_SP\giay1.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\giay2.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\giay3.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\giay4.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\giay5.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\giay6.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\giay7.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\giay8.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\home.png" />
+    <Content Remove="wwwroot\css\IMG_SP\images-sale.png" />
+    <Content Remove="wwwroot\css\IMG_SP\instagram.png" />
+    <Content Remove="wwwroot\css\IMG_SP\line.png" />
+    <Content Remove="wwwroot\css\IMG_SP\logobot.png" />
+    <Content Remove="wwwroot\css\IMG_SP\LogoChuan.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\phone-call.png" />
+    <Content Remove="wwwroot\css\IMG_SP\pk1.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\pk2.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\pk3.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\pk4.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\pk5.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\pk6.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\pk7.png" />
+    <Content Remove="wwwroot\css\IMG_SP\pk8.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\pk9.jfif" />
+    <Content Remove="wwwroot\css\IMG_SP\poster-bitis.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\poster-bitis01.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\shop-bán-giày-sneaker-chinh-hang-tai-hcm-king-shoes-authentic-real-uy-tin-nhat-2(4).jpeg" />
+    <Content Remove="wwwroot\css\IMG_SP\shopping-cart-add (24px).png" />
+    <Content Remove="wwwroot\css\IMG_SP\slide001.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\slide003.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\slide004.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\slide1.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\trangchuconvet.jpg" />
+    <Content Remove="wwwroot\css\IMG_SP\twitter.png" />
+    <Content Remove="wwwroot\css\IMG_SP\zalo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">
@@ -20,9 +75,64 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="IMG\IMG_SP\" />
     <Folder Include="IServices\" />
-    <Folder Include="RequestModel\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\IMG_SP\bang-size-giay-nam.jpg" />
+    <None Include="wwwroot\css\IMG_SP\BANNER-CONVERSE.jpg" />
+    <None Include="wwwroot\css\IMG_SP\banner-cuahang.jpg" />
+    <None Include="wwwroot\css\IMG_SP\banner-gioithieu.jpg" />
+    <None Include="wwwroot\css\IMG_SP\banner-sanpham.jpg" />
+    <None Include="wwwroot\css\IMG_SP\banner-slide-1.png" />
+    <None Include="wwwroot\css\IMG_SP\bannerCSKH.jpg" />
+    <None Include="wwwroot\css\IMG_SP\bannergt-gt.jpg" />
+    <None Include="wwwroot\css\IMG_SP\bannergt.jpg" />
+    <None Include="wwwroot\css\IMG_SP\bannner.png" />
+    <None Include="wwwroot\css\IMG_SP\Decorative-Line-Gold-PNG-Clipart.png" />
+    <None Include="wwwroot\css\IMG_SP\demoASM1.jpg" />
+    <None Include="wwwroot\css\IMG_SP\demoASM2.jpg" />
+    <None Include="wwwroot\css\IMG_SP\duongpen.jpg" />
+    <None Include="wwwroot\css\IMG_SP\email.png" />
+    <None Include="wwwroot\css\IMG_SP\facebook (1).png" />
+    <None Include="wwwroot\css\IMG_SP\facebook.png" />
+    <None Include="wwwroot\css\IMG_SP\giay1.jfif" />
+    <None Include="wwwroot\css\IMG_SP\giay2.jfif" />
+    <None Include="wwwroot\css\IMG_SP\giay3.jfif" />
+    <None Include="wwwroot\css\IMG_SP\giay4.jfif" />
+    <None Include="wwwroot\css\IMG_SP\giay5.jfif" />
+    <None Include="wwwroot\css\IMG_SP\giay6.jfif" />
+    <None Include="wwwroot\css\IMG_SP\giay7.jfif" />
+    <None Include="wwwroot\css\IMG_SP\giay8.jfif" />
+    <None Include="wwwroot\css\IMG_SP\home.png" />
+    <None Include="wwwroot\css\IMG_SP\images-sale.png" />
+    <None Include="wwwroot\css\IMG_SP\instagram.png" />
+    <None Include="wwwroot\css\IMG_SP\line.png" />
+    <None Include="wwwroot\css\IMG_SP\logobot.png" />
+    <None Include="wwwroot\css\IMG_SP\LogoChuan.jpg" />
+    <None Include="wwwroot\css\IMG_SP\phone-call.png" />
+    <None Include="wwwroot\css\IMG_SP\pk1.jfif" />
+    <None Include="wwwroot\css\IMG_SP\pk2.jfif" />
+    <None Include="wwwroot\css\IMG_SP\pk3.jpg" />
+    <None Include="wwwroot\css\IMG_SP\pk4.jpg" />
+    <None Include="wwwroot\css\IMG_SP\pk5.jfif" />
+    <None Include="wwwroot\css\IMG_SP\pk6.jfif" />
+    <None Include="wwwroot\css\IMG_SP\pk7.png" />
+    <None Include="wwwroot\css\IMG_SP\pk8.jfif" />
+    <None Include="wwwroot\css\IMG_SP\pk9.jfif" />
+    <None Include="wwwroot\css\IMG_SP\poster-bitis.jpg" />
+    <None Include="wwwroot\css\IMG_SP\poster-bitis01.jpg" />
+    <None Include="wwwroot\css\IMG_SP\shop-bán-giày-sneaker-chinh-hang-tai-hcm-king-shoes-authentic-real-uy-tin-nhat-2(4).jpeg" />
+    <None Include="wwwroot\css\IMG_SP\shopping-cart-add (24px).png" />
+    <None Include="wwwroot\css\IMG_SP\slide001.jpg" />
+    <None Include="wwwroot\css\IMG_SP\slide003.jpg" />
+    <None Include="wwwroot\css\IMG_SP\slide004.jpg" />
+    <None Include="wwwroot\css\IMG_SP\slide1.jpg" />
+    <None Include="wwwroot\css\IMG_SP\trangchuconvet.jpg" />
+    <None Include="wwwroot\css\IMG_SP\twitter.png" />
+    <None Include="wwwroot\css\IMG_SP\zalo.png" />
   </ItemGroup>
 
 </Project>

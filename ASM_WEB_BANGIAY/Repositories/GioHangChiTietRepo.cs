@@ -51,9 +51,9 @@ namespace ASM_WEB_BANGIAY.Repositories
             return _context.GioHangChiTiets.ToList();
         }
 
-        public GioHangChiTiet GetByIdGioHangChiTiet(int ma)
+        public GioHangChiTiet GetGHCTbyMa(int masp, int magh)
         {
-            throw new System.NotImplementedException();
+            return _context.GioHangChiTiets.FirstOrDefault(p=>p.MaSP == masp && p.MaGioHang==magh);
         }
 
         public bool UpdateGioHangChiTiet(GioHangChiTiet giohangchitiet)
